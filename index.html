@@ -391,9 +391,12 @@
           <label class="roi-label-static">Aktueller Fenstertyp</label>
           <div class="roi-select-wrap">
             <select id="inp-typ" class="roi-select">
-              <option value="0.17">Einfachverglasung (vor 1990)</option>
-              <option value="0.12" selected>Doppelverglasung (1990–2010)</option>
-              <option value="0.05">Doppelverglasung (nach 2010)</option>
+              <option value="0.24" data-ziel="Dreifachverglasung Passivhaus">Einfachverglasung (vor 1980) – Uw ≈ 5,8 W/m²K</option>
+              <option value="0.19" data-ziel="Dreifachverglasung Passivhaus">Zweischeiben-Isolierglas ohne Wärmeschutz (1980–1994) – Uw ≈ 2,8 W/m²K</option>
+              <option value="0.13" selected data-ziel="Dreifachverglasung Passivhaus">Wärmeschutzglas 2-fach (1994–2005) – Uw ≈ 1,5 W/m²K</option>
+              <option value="0.08" data-ziel="Dreifachverglasung Passivhaus">Wärmeschutzglas 2-fach (2005–2015) – Uw ≈ 1,1 W/m²K</option>
+              <option value="0.04" data-ziel="Passivhaus-Standard (Uw 0,76)">Dreifachverglasung Standard (2015+) – Uw ≈ 0,9 W/m²K</option>
+              <option value="0.015" data-ziel="Passivhaus-Standard (Uw 0,76)">Dreifachverglasung Passivhaus (Uw ≤ 0,8) – bereits sehr effizient</option>
             </select>
           </div>
         </div>
@@ -402,7 +405,7 @@
         <div class="roi-result-card roi-result-main">
           <span class="roi-result-label">Jährliche Ersparnis</span>
           <strong class="roi-result-value" id="res-jaehrlich">660 €</strong>
-          <span class="roi-result-sub">durch Wechsel auf Dreifachverglasung</span>
+          <span class="roi-result-sub" id="res-ziel">durch Wechsel auf Dreifachverglasung Passivhaus</span>
         </div>
         <div class="roi-result-card">
           <span class="roi-result-label">10-Jahres-Ersparnis</span>

@@ -209,20 +209,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const fenster = parseInt(inpFenster.value);
       const kosten  = parseInt(inpKosten.value);
       const saving  = parseFloat(inpTyp.value);
+      const selectedOption = inpTyp.options[inpTyp.selectedIndex];
+      const ziel    = selectedOption.dataset.ziel || 'Dreifachverglasung Passivhaus';
 
       document.getElementById('val-fenster').textContent = fenster;
       document.getElementById('val-flaeche').textContent = parseInt(inpFlaeche.value).toLocaleString('de-DE') + ' m²';
       document.getElementById('val-kosten').textContent  = kosten.toLocaleString('de-DE') + ' €';
 
       const jaehrlich   = Math.round(kosten * saving);
-      const co2         = ((kosten / 0.10) * 0.201 * saving / 1000).toFixed(1);
-      const investition = fenster * 600;
+      // CO2: Gas ~0,09 €/kWh, Emissionsfaktor 0,201 kg CO2/kWh
+      const co2         = ((kosten / 0.09) * 0.201 * saving / 1000).toFixed(1);
+      // Investition: ~650 € pro Fenster (Material + Montage, Durchschnitt PVC)
+      const investition = fenster * 650;
       const amor        = jaehrlich > 0 ? Math.ceil(investition / jaehrlich) : '–';
 
       document.getElementById('res-jaehrlich').textContent = jaehrlich.toLocaleString('de-DE') + ' €';
       document.getElementById('res-10jahre').textContent   = (jaehrlich * 10).toLocaleString('de-DE') + ' €';
       document.getElementById('res-co2').textContent       = co2.replace('.', ',') + ' t';
-      document.getElementById('res-amor').textContent      = 'ca. ' + amor + ' Jahre';
+      document.getElementById('res-amor').textContent      = amor !== '–' ? 'ca. ' + amor + ' Jahre' : '–';
+      const zielEl = document.getElementById('res-ziel');
+      if (zielEl) zielEl.textContent = 'durch Wechsel auf ' + ziel;
     };
 
     [inpFenster, inpFlaeche, inpKosten, inpTyp].forEach(el => el.addEventListener('input', calcROI));
