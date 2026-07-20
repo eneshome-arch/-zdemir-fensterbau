@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Hauptseiten -->
   <url>
     <loc>https://xn--zdemir-fensterbau-yzb.de/</loc>
     <lastmod>2026-07-20</lastmod>
@@ -30,4 +32,79 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Produktseiten -->
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=ideal-8000</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=ideal-7000</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=neo</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=ideal-4000</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=ideal-5000</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=hst</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=psk</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=haustuer-pvc</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=haustuer-genesis</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=alu-thermo</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=alu-schiebetueren</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--zdemir-fensterbau-yzb.de/produkt/?id=alu-eingangstueren</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
