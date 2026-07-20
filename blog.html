@@ -277,10 +277,37 @@
       stroke: rgba(255,255,255,0.5);
       stroke-width: 1.5;
     }
-    .card-bg-1 { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
-    .card-bg-2 { background: linear-gradient(135deg, #064e3b 0%, #059669 100%); }
-    .card-bg-3 { background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%); }
-    .card-bg-4 { background: linear-gradient(135deg, #7c2d12 0%, #ea580c 100%); }
+    .card-bg-1 { background: #0f172a; }
+    .card-bg-2 { background: #064e3b; }
+    .card-bg-3 { background: #1e1b4b; }
+    .card-bg-4 { background: #7c2d12; }
+
+    .blog-card-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-card-img img {
+      transform: scale(1.04);
+    }
+    .featured-card-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform 0.4s ease;
+    }
+    .featured-card:hover .featured-card-img img {
+      transform: scale(1.03);
+    }
+    .featured-card-img-pattern { z-index: 1; background: linear-gradient(to bottom, rgba(15,23,42,0.3) 0%, rgba(15,23,42,0.5) 100%); }
+    .featured-badge { z-index: 2; }
+    .featured-card-img-icon { z-index: 2; }
 
     .blog-card-body {
       padding: 22px 24px 24px;
@@ -633,11 +660,9 @@
         <div class="blog-featured">
           <a href="blog/fenster-u-wert-erklaert.html" class="featured-card">
             <div class="featured-card-img">
+              <img src="https://images.pexels.com/photos/35842715/pexels-photo-35842715.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gemütliches Wohnzimmer mit großen Fenstern und Bergblick" loading="lazy">
               <div class="featured-card-img-pattern"></div>
               <span class="featured-badge">Beliebt</span>
-              <div class="featured-card-img-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
             </div>
             <div class="featured-card-body">
               <div class="article-category">Fenster · Energiesparen</div>
@@ -663,9 +688,7 @@
 
           <a href="blog/kunststoff-vs-aluminium.html" class="blog-card" data-category="fenster">
             <div class="blog-card-img card-bg-2">
-              <div class="blog-card-img-inner">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-              </div>
+              <img src="https://images.pexels.com/photos/9901861/pexels-photo-9901861.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modernes Gebäude mit Aluminium-Glasfassade" loading="lazy">
             </div>
             <div class="blog-card-body">
               <div class="article-category">Fenster</div>
@@ -686,9 +709,7 @@
 
           <a href="blog/fenster-einbau-hannover.html" class="blog-card" data-category="montage">
             <div class="blog-card-img card-bg-3">
-              <div class="blog-card-img-inner">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-              </div>
+              <img src="https://images.pexels.com/photos/5691544/pexels-photo-5691544.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Handwerker montiert Fensterrahmen mit Bohrmaschine" loading="lazy">
             </div>
             <div class="blog-card-body">
               <div class="article-category">Montage</div>
@@ -709,9 +730,7 @@
 
           <a href="blog/haustuer-sicherheit.html" class="blog-card" data-category="tueren">
             <div class="blog-card-img card-bg-4">
-              <div class="blog-card-img-inner">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
+              <img src="https://images.pexels.com/photos/2829338/pexels-photo-2829338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gebäudefenster von außen – Sicherheit und Einbruchschutz" loading="lazy">
             </div>
             <div class="blog-card-body">
               <div class="article-category">Türen</div>
@@ -732,9 +751,7 @@
 
           <a href="blog/energieausweis-fenster.html" class="blog-card" data-category="energie">
             <div class="blog-card-img card-bg-1">
-              <div class="blog-card-img-inner">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
+              <img src="https://images.pexels.com/photos/7851906/pexels-photo-7851906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gemütliches Wohnzimmer mit warmem Licht – energieeffizientes Zuhause" loading="lazy">
             </div>
             <div class="blog-card-body">
               <div class="article-category">Energiesparen</div>
