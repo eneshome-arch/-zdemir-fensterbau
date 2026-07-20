@@ -15,7 +15,7 @@ Statische Website für **Özdemir Bau UG**, Garbsen. Gebaut mit reinem HTML, CSS
 | Telefon | +49 172 276 1541 |
 | E-Mail | info@özdemir-fensterbau.de |
 | USt-ID | DE355586862 |
-| Domain | özdemir-fensterbau.de |
+| Domain | özdemir-fensterbau.de (Punycode: xn--zdemir-fensterbau-yzb.de) |
 | Gegründet (UG) | 2025 (Handwerkserfahrung seit über 10 Jahren) |
 
 ---
@@ -28,13 +28,17 @@ ozdemir-fensterbau/
 ├── ueber-uns.html          # Über uns
 ├── leistungen.html         # Leistungen
 ├── sortiment.html          # Produkt-Shop (32 Produkte)
+├── blog.html               # Blog-Übersichtsseite
+├── blog/
+│   ├── fenster-u-wert-erklaert.html      # Artikel: U-Wert erklärt
+│   └── kunststoff-vs-aluminium.html      # Artikel: Kunststoff vs. Aluminium
 ├── produkt/
 │   └── index.html          # Produktdetailseite (JS-driven, URL-param ?id=)
 ├── kontakt.html            # Kontakt mit Formular & Google Maps
 ├── datenschutz.html        # Datenschutzerklärung (DSGVO)
 ├── impressum.html          # Impressum (§5 TMG)
 ├── robots.txt              # Crawler-Direktiven
-├── sitemap.xml             # Alle indexierbaren Seiten
+├── sitemap.xml             # Alle indexierbaren Seiten inkl. Blog-URLs
 ├── .nojekyll               # GitHub Pages: Jekyll-Build überspringen
 ├── css/
 │   └── style.css           # Gesamtes Styling (v=114)
@@ -56,14 +60,62 @@ ozdemir-fensterbau/
 
 | Seite | Datei | Headline |
 |-------|-------|----------|
-| Startseite | `index.html` | Fenster die überzeugen. |
+| Startseite | `index.html` | Fensterbau Hannover. |
 | Über uns | `ueber-uns.html` | IHR FACHBETRIEB. AUS GARBSEN. |
 | Leistungen | `leistungen.html` | SECHS LEISTUNGEN. EIN ANSPRECHPARTNER. |
 | Sortiment | `sortiment.html` | ALLE SYSTEME. EIN PARTNER. |
+| Blog | `blog.html` | Fenster-Blog. Ehrliche Tipps. |
 | Produktdetail | `produkt/index.html` | Dynamisch via `?id=` URL-Parameter |
 | Kontakt | `kontakt.html` | SPRECHEN WIR ÜBER IHR PROJEKT. |
 | Datenschutz | `datenschutz.html` | DSGVO-Datenschutzerklärung |
 | Impressum | `impressum.html` | Impressum gemäß §5 TMG |
+
+---
+
+## Blog
+
+Der Blog dient der SEO-Optimierung für lokale Suchanfragen rund um „Fensterbau Hannover". Artikel sind als statische HTML-Dateien im Ordner `blog/` abgelegt.
+
+### Vorhandene Artikel
+
+| Datei | Titel | Keywords |
+|-------|-------|----------|
+| `fenster-u-wert-erklaert.html` | Was bedeutet U-Wert beim Fenster? | U-Wert Fenster, Energiesparen Hannover |
+| `kunststoff-vs-aluminium.html` | Kunststoff oder Aluminium? | Kunststofffenster Hannover, Aluminiumfenster Hannover |
+
+### Blog-Features
+- Übersichtsseite mit Featured Article + 4er Karten-Grid
+- Kategorie-Filter (Fenster, Türen, Energiesparen, Montage …) per JS
+- Sidebar mit Themen-Tags, letzten Artikeln und Kontakt-CTA
+- Echte Pexels-Fotos in allen Karten (Hover-Zoom-Effekt)
+- Artikel mit Inhaltsverzeichnis-Sidebar, Vergleichstabellen, Callout-Boxen
+- Schema.org `Blog` + `BlogPosting` + `LocalBusiness` JSON-LD auf allen Blog-Seiten
+- Blog-Link im Footer (Navigation-Spalte) und als Button auf der Startseite
+
+### Neuen Artikel erstellen
+1. Datei in `blog/` anlegen (z. B. `blog/schallschutz-fenster.html`)
+2. Vorlage von einem bestehenden Artikel kopieren und anpassen
+3. Artikel zur `blog.html` Karten-Grid hinzufügen
+4. URL in `sitemap.xml` eintragen
+
+---
+
+## SEO
+
+Die Website ist auf das Keyword **„Fensterbau Hannover"** und verwandte Begriffe optimiert.
+
+### Maßnahmen
+- Titel, Meta-Description und H1 aller Seiten mit Hannover-Keywords
+- Schema.org `HomeAndConstructionBusiness` auf `index.html` mit `geo`, `areaServed` (Hannover, Garbsen, Langenhagen, Burgwedel, Neustadt a. Rbge., Region Hannover), `serviceArea` (50 km Radius) und `makesOffer` (5 Leistungen)
+- `sitemap.xml` mit `<lastmod>` für alle Haupt-, Produkt- und Blog-Seiten
+- `produkt/index.html` auf `noindex` gesetzt (URL-Parameter-Seite)
+- Canonical Tags auf allen Seiten
+- Schema.org `Blog` + `BlogPosting` auf Blog-Seiten
+- Blog-Artikel decken Long-Tail-Keywords ab (U-Wert, Kunststoff vs. Aluminium …)
+
+### Google Search Console
+- Sitemap unter `xn--zdemir-fensterbau-yzb.de/sitemap.xml` einreichen
+- Status „Gefunden – zurzeit nicht indexiert" → normal bei neuen Sites, löst sich mit Zeit und Backlinks
 
 ---
 
@@ -119,22 +171,36 @@ Der Shop ist nach dem Shopify-Prinzip aufgebaut: zentrale Produktdaten in `js/pr
 
 ---
 
+## ROI-Rechner
+
+Auf `index.html` eingebettet. Berechnet Heizkosten-Einsparung, 10-Jahres-Ersparnis, CO₂-Einsparung und Amortisationszeit.
+
+| Eingabe | Bereich |
+|---------|---------|
+| Anzahl Fenster | 1–200 |
+| Beheizte Fläche | 50–5.000 m² |
+| Jährliche Heizkosten | 500–50.000 € |
+| Aktueller Fenstertyp | 6 Optionen (Einfachverglasung bis Passivhaus) |
+
+Rechengrundlage: U-Wert-basierte Einsparprozentsätze, Gaspreis 0,09 €/kWh, Investition 650 € pro Fenster.
+
+---
+
 ## Features
 
-- **Hero Section** – Hintergrundfoto (`hero-bg.png`) mit dunklem Gradient-Overlay; Browser-Mockup mit Sortiment-Vorschau (iframe) rechts.
+- **Hero Section** – Hintergrundfoto mit dunklem Gradient-Overlay; Browser-Mockup mit Sortiment-Vorschau (iframe) rechts; H1 „Fensterbau Hannover."
 - **Floating Island Navigation** – Pill-förmiger Header; bleibt dunkel-transparent bis Hero gescrollt, dann weiß mit `backdrop-filter: blur(20px)`.
-- **Hannover-Section** – YouTube-Video (autoplay, loop via IFrame API, keine Controls) mit Text-Overlay und CTA-Button. Text: „Hannover & Umgebung".
-- **3D Timeline-Karussell** – „So arbeiten wir": 6 Schritte auf virtualem 3D-Zylinder.
-- **Team-Section** – 2 Karten nebeneinander (Mehmet Özdemir & Cevat Özdemir) mit Float-Animation und Avatar-Glow.
-- **Trust-Bar Animation** – 5 Vertrauenssignale zirkulieren mit Pop-in-Effekt alle 2,5 s.
+- **Hannover-Section** – YouTube-Video (autoplay, loop via IFrame API, keine Controls) mit Text-Overlay und CTA-Button.
+- **Leistungsportfolio** – 6 Leistungskarten mit Hintergrundfoto-Overlay im Blue-Frame-Stil.
+- **Über-uns-Teaser** – Teamfoto, Stärken-Liste, Buttons „Mehr über uns" + „Ratgeber & Blog".
 - **ROI-Rechner** – Fenstertyp, Heizkosten, Fläche → Ersparnis, CO₂, Amortisation.
-- **Leistungsportfolio** – 6 Leistungskarten im Blue-Frame-Stil.
-- **Anfrage-Modal** – Produktspezifisch mit Vorschau (Bild, Kategorie, Name, Tagline). Web3Forms-Integration für E-Mail-Versand.
+- **Projekt-Timeline** – 6 Schritte vom Auftrag zur Abnahme.
+- **Blog** – Übersichtsseite + vollständige Artikel mit Bildern, Tabellen, Schema.org.
+- **Anfrage-Modal** – Produktspezifisch mit Vorschau. Web3Forms-Integration.
 - **Fade-in on Scroll** – `IntersectionObserver`.
 - **Counter-Animation** – `requestAnimationFrame`, easeOut.
-- **Web3Forms** – Anfrage-Modal + Kontaktformular.
 - **Google Maps** – Adress-spezifischer Embed (Bremer Straße 31, Garbsen).
-- **SEO** – Meta-Tags, OG-Tags, Canonical, Schema.org JSON-LD (LocalBusiness).
+- **SEO** – Meta-Tags, OG-Tags, Canonical, Schema.org JSON-LD (HomeAndConstructionBusiness + Blog).
 - **Barrierefreiheit** – Skip-Link, `sr-only`, `:focus-visible`, `prefers-reduced-motion`.
 
 ---
@@ -158,14 +224,13 @@ Konsistentes Design-Muster für alle Hauptsektionen:
 /* Äußerer Rahmen */
 background: #dbeafe;
 padding: 28px;
-background-image: radial-gradient(…); /* Bloom */
 
 /* Innere Karte */
 background: #fff;
 border-radius: 20px;
 box-shadow: 0 8px 40px rgba(59,130,246,0.10);
 ```
-Angewendet auf: Hero, Hannover-Section, Leistungsportfolio, ROI-Rechner, Team-Section.
+Angewendet auf: Hero, Hannover-Section, Leistungsportfolio, ROI-Rechner.
 
 ### Navigation – Breakpoints
 
@@ -186,6 +251,7 @@ npx serve .
 Dann im Browser: [http://localhost:3000](http://localhost:3000)
 
 > Produktdetailseite: `http://localhost:3000/produkt/?id=ideal-8000`
+> Blog-Artikel: `http://localhost:3000/blog/fenster-u-wert-erklaert.html`
 
 ---
 
@@ -205,6 +271,8 @@ Dann im Browser: [http://localhost:3000](http://localhost:3000)
 - [ ] Web3Forms Access-Key in `js/main.js` eintragen (`DEIN_WEB3FORMS_KEY`)
 - [ ] Echte Projektfotos (Galerie)
 - [ ] Team-Fotos
+- [ ] Weitere Blog-Artikel (Schallschutz, Einbruchschutz RC2/RC3, Hebe-Schiebe-Türen …)
+- [ ] Google Business Profile: Blog-Link als Beitrag posten (für Google Maps Sichtbarkeit)
 
 ---
 
@@ -226,3 +294,4 @@ Dann im Browser: [http://localhost:3000](http://localhost:3000)
 - Google Fonts – Inter
 - Web3Forms (Anfrage-Modal + Kontaktformular, kein Backend)
 - YouTube IFrame API (Video-Loop in Hannover-Section)
+- Pexels (kostenlose Stockfotos für Blog-Artikel)
